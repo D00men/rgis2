@@ -27,7 +27,7 @@ jobs:
       run: |
         DOCKER_IMAGE_NAME=d00men/rgis1
         COMMIT_HASH=$(git rev-parse --short HEAD)
-        docker build -t $DOCKER_IMAGE_NAME:latest -t $DOCKER_IMAGE_NAME:$COMMIT_HASH ./rgis2/rgis1
+        docker build -t $DOCKER_IMAGE_NAME:latest -t $DOCKER_IMAGE_NAME:$COMMIT_HASH ./rgis1/rgis1
 
     - name: Push Docker image
       run: |
