@@ -31,4 +31,4 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push d00men/rgis1:$COMMIT_HASH
+        docker push d00men/rgis1
