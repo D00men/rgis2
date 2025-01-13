@@ -25,10 +25,10 @@ jobs:
 
     - name: Build Docker image
       run: |
-        DOCKER_IMAGE_NAME=d00men/rgis1
+        DOCKER_IMAGE_NAME=d00men/RGIS
         COMMIT_HASH=$(git rev-parse --short HEAD)
         docker build -t $DOCKER_IMAGE_NAME:latest -t $DOCKER_IMAGE_NAME:$COMMIT_HASH ./rgis1/rgis1
 
     - name: Push Docker image
       run: |
-        docker push d00men/rgis1
+        docker push d00men/RGIS

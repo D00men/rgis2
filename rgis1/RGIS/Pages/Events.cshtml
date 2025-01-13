@@ -1,0 +1,27 @@
+﻿@page
+@model RGIS.Pages.EventsModel
+@{
+    ViewData["Title"] = "Search Events";
+}
+
+<h2>Search Events</h2>
+
+<form method="get">
+    <input type="text" name="location" placeholder="Enter location" />
+    <button type="submit">Search</button>
+</form>
+
+@if (Model.Events.Any())
+{
+    <h3>Results</h3>
+    <ul>
+        @foreach (var ev in Model.Events)
+        {
+            <li>@ev.Name (@ev.Location) - @ev.Date.ToShortDateString()</li>
+        }
+    </ul>
+}
+else if (!string.IsNullOrEmpty(Model.SearchLocation))
+{
+    <p>No events found for "@Model.SearchLocation".</p>
+}
